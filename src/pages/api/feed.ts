@@ -5,7 +5,8 @@ import { validarTokenJWT } from '../../../middlewares/validarTokenJWT';
 import { conectarMongoDb } from '../../../middlewares/conectarMongoDb';
 import { PublicacaoModel } from '../../../models/PublicacaoModel';
 
-const feedEndPoint = async (req : NextApiRequest, res : NextApiResponse<RespostaPadraoMsg | any>) => {
+const feedEndPoint = 
+    async (req : NextApiRequest, res : NextApiResponse<RespostaPadraoMsg | any>) => {
     try {
         if(req.method === 'GET') {
             // receber a informação do ID do usuário do feed
