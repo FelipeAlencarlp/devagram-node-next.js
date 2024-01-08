@@ -25,7 +25,7 @@ const likeEndpoint =
 
                 // administrar os likes
                 const indexUsuarioNoLike =
-                    publicacao.likes.findIndex((e : any) => e.toString() === usuario._id.toString())
+                    publicacao.likes.findIndex((e : any) => e.toString() === usuario._id.toString());
 
                 // se o index for > -1 (0/1) ele curte a publicação
                 if(indexUsuarioNoLike != -1) {
