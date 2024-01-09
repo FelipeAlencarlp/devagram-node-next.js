@@ -6,6 +6,7 @@ import { conectarMongoDb } from '../../../middlewares/conectarMongoDb';
 import { validarTokenJWT } from '../../../middlewares/validarTokenJWT';
 import { PublicacaoModel } from '../../../models/PublicacaoModel';
 import { UsuarioModel } from '../../../models/UsuarioModel';
+import { politicaCORS } from '../../../middlewares/politicaCORS';
 
 const handler = nc()
     .use(upload.single('file'))
@@ -57,4 +58,4 @@ export const config = {
 };
 
 // só vai conectar com a API se o token estiver validado e o banco de dados conectado
-export default validarTokenJWT(conectarMongoDb(handler));
+export default politicaCORS(validarTokenJWT(conectarMongoDb(handler)));

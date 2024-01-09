@@ -4,6 +4,7 @@ import { validarTokenJWT } from "../../../middlewares/validarTokenJWT";
 import { conectarMongoDb } from "../../../middlewares/conectarMongoDb";
 import { UsuarioModel } from "../../../models/UsuarioModel";
 import { SeguidorModel } from "../../../models/SeguidorModel";
+import { politicaCORS } from "../../../middlewares/politicaCORS";
 
 
 const seguirEndpoint =
@@ -74,4 +75,4 @@ const seguirEndpoint =
         }
 }
 
-export default validarTokenJWT(conectarMongoDb(seguirEndpoint));
+export default politicaCORS(validarTokenJWT(conectarMongoDb(seguirEndpoint)));

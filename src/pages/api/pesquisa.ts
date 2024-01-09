@@ -3,6 +3,7 @@ import type { RespostaPadraoMsg } from "../../../types/RespostaPadraoMsg";
 import { conectarMongoDb } from "../../../middlewares/conectarMongoDb";
 import { validarTokenJWT } from "../../../middlewares/validarTokenJWT";
 import { UsuarioModel } from "../../../models/UsuarioModel";
+import { politicaCORS } from "../../../middlewares/politicaCORS";
 
 
 const pesquisaEndPoint =
@@ -44,4 +45,4 @@ const pesquisaEndPoint =
         }
 }
 
-export default validarTokenJWT(conectarMongoDb(pesquisaEndPoint));
+export default politicaCORS(validarTokenJWT(conectarMongoDb(pesquisaEndPoint)));
